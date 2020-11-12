@@ -29,14 +29,11 @@
     // "remoteUser": "vscode"
 
     // 项目目录
-	"workspaceMount": "source=/path/to/project,target=/workspace/project,type=bind,consistency=cached",
+	"workspaceMount": "source=/home/ubuntu/code/my/unknown/unknown-api,target=/workspace/project,type=bind,consistency=cached",
     "workspaceFolder": "/workspace/project",
 
     // 挂载映射
-	"mounts": [
-        "source=/path/to/project/.devcontainer/.zshrc,target=/root/.zshrc,type=bind,consistency=cached",
-        "source=/path/to/project/.devcontainer/.vimrc,target=/root/.vimrc,type=bind,consistency=cached"
-	],
+	"mounts": [],
 
     // 环境变量
     "containerEnv": {
