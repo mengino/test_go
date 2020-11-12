@@ -85,24 +85,24 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
     && echo en_US.UTF-8 UTF-8 > /etc/locale.gen \ && locale-gen \
     #
     # Install oh-my-zsh
-    && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
+    # && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
     # Install zsh-syntax-highlighting plugin
-    && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting \
+    # && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting \
     # Install zsh-autosuggestions plugin
-    && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
+    # && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions \
     # Install powerlevel9k theme
-    && git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k \
+    # && git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k \
     # Install powerline
-    && git clone https://github.com/powerline/powerline.git /usr/local/powerline \
+    # && git clone https://github.com/powerline/powerline.git /usr/local/powerline \
     #
     # Install about protobuf
-    && curl -o /tmp/protobuf.page https://github.com/protocolbuffers/protobuf/releases -L \
-        && cat /tmp/protobuf.page | grep 'href=".*protoc-.*.-linux-x86_64.zip"' | head -1 | \
-            awk -F '"' ' {print "curl -o /tmp/protobuf.zip https://github.com"$2" -L" > "/tmp/protobuf.download"}' \
-        && sh /tmp/protobuf.download \
-        && unzip -d /tmp/protobuf /tmp/protobuf.zip \
-        && cd /tmp/protobuf \
-        && cp /tmp/protobuf/bin/protoc /go/bin && cp -r /tmp/protobuf/include $(go env GOPATH)/bin \
+#     && curl -o /tmp/protobuf.page https://github.com/protocolbuffers/protobuf/releases -L \
+#         && cat /tmp/protobuf.page | grep 'href=".*protoc-.*.-linux-x86_64.zip"' | head -1 | \
+#             awk -F '"' ' {print "curl -o /tmp/protobuf.zip https://github.com"$2" -L" > "/tmp/protobuf.download"}' \
+#         && sh /tmp/protobuf.download \
+#         && unzip -d /tmp/protobuf /tmp/protobuf.zip \
+#         && cd /tmp/protobuf \
+#         && cp /tmp/protobuf/bin/protoc /go/bin && cp -r /tmp/protobuf/include $(go env GOPATH)/bin \
     #
     # Clean up
     && apt-get autoremove -y \
