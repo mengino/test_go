@@ -7,7 +7,7 @@
 
     // Set *default* container specific settings.json values on container create.
     "settings": {
-        "terminal.integrated.shell.linux": "/usr/bin/zsh",
+        "terminal.integrated.shell.linux": "/bin/bash",
         "go.gopath": "/go"
     },
 
@@ -15,7 +15,7 @@
     "extensions": [
         "eamodio.gitlens",
         "shardulm94.trailing-spaces",
-        "ms-vscode.go",
+        "golang.go",
         "zxh404.vscode-proto3"
     ],
 
